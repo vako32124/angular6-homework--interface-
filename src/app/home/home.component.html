@@ -1,0 +1,41 @@
+<div class="container">
+    <h3>Student Form</h3>
+    
+    <input type="text" placeholder="Name" [(ngModel)]="student1.name">
+    <input type="number" placeholder="Age" [(ngModel)]="student1.age">
+    <input type="text" placeholder="Grade" [(ngModel)]="student1.grade">
+    <input type="text" placeholder="Subjects" [(ngModel)]="student1.subjects">
+  
+    <label>
+      <input type="checkbox" [(ngModel)]="student1.isEnrolled"> Enrolled?
+    </label>
+  
+    <h3>Address</h3>
+    <input type="text" placeholder="Street" [(ngModel)]="student1.address.street">
+    <input type="text" placeholder="City" [(ngModel)]="student1.address.city">
+    <input type="text" placeholder="ZIP" [(ngModel)]="student1.address.zip">
+  
+    <button (click)="submitStudent()">Create Student</button>
+  
+    
+    <div class="student-info" *ngIf="submittedStudent">
+      <h2>Student Info</h2>
+      <p>Name: {{ submittedStudent.name }}</p>
+      <p>Age: {{ submittedStudent.age }}</p>
+      <p>Grade: {{ submittedStudent.grade }}</p>
+      <p>Subjects: {{ submittedStudent.subjects }}</p>
+      <p>Enrolled: {{ submittedStudent.isEnrolled ? 'Yes' : 'No' }}</p>
+  
+      <h3>Address</h3>
+      <p>Street: {{ submittedStudent.address.street }}</p>
+      <p>City: {{ submittedStudent.address.city }}</p>
+      <p>ZIP: {{ submittedStudent.address.zip }}</p>
+    </div>
+  </div>
+  
+
+
+
+
+
+

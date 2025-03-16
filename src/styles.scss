@@ -1,1 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
+ *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    transition: background-color 0.2s ease;
+    outline: none;
+    box-shadow: none;
+ }
+
+ cursor,li,h2{
+   cursor: pointer;
+ }
