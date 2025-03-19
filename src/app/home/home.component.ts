@@ -5,11 +5,10 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-home',
-  imports: [FormsModule,CommonModule],
+  imports: [FormsModule, CommonModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
-
 export class HomeComponent {
 
   student1: Student = {
@@ -25,10 +24,10 @@ export class HomeComponent {
     }
   };
 
-  submittedStudent: Student | null = null;
+  students: { student: Student, checked: boolean }[] = [];
 
   submitStudent() {
-    this.submittedStudent = { ...this.student1 }; 
+    this.students.push({ student: { ...this.student1 }, checked: false }); 
     this.clearForm();
   }
 
@@ -46,7 +45,21 @@ export class HomeComponent {
       }
     };
   }
+
+  delete(index: number) {
+    this.students.splice(index, 1);
+  }
+
+  edit(index: number) {
+    this.student1 = { ...this.students[index].student };
+    this.delete(index); 
+  }
+
+  deleteChecked() {
+    this.students = this.students.filter(student => !student.checked);
+  }
 }
+
 
 
 
