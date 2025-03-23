@@ -16,28 +16,10 @@
   <input type="text" placeholder="ZIP" [(ngModel)]="student1.address.zip">
 
   <button (click)="submitStudent()">Create Student</button>
-  <button (click)="deleteChecked()">Delete Checked Students</button>
 
-  <div *ngFor="let entry of students; let i = index" class="student-info">
-    <input type="checkbox" [(ngModel)]="entry.checked">
-
-    <h2>Student Info</h2>
-    <p>Name: {{ entry.student.name }}</p>
-    <p>Age: {{ entry.student.age }}</p>
-    <p>Grade: {{ entry.student.grade }}</p>
-    <p>Subjects: {{ entry.student.subjects }}</p>
-    <p>Enrolled: {{ entry.student.isEnrolled ? 'Yes' : 'No' }}</p>
-
-    <h3>Address</h3>
-    <p>Street: {{ entry.student.address.street }}</p>
-    <p>City: {{ entry.student.address.city }}</p>
-    <p>ZIP: {{ entry.student.address.zip }}</p>
-
-    <button (click)="delete(i)">Delete</button>
-    <button (click)="edit(i)">Edit</button>
-  </div>
+  
+  <app-displaydata [students]="students"></app-displaydata>
 </div>
-
 
 
 

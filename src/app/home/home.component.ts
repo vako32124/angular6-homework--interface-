@@ -2,10 +2,11 @@ import { Component } from '@angular/core';
 import { Student } from '../models/users';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { DisplaydataComponent } from '../displaydata/displaydata.component';
 
 @Component({
   selector: 'app-home',
-  imports: [FormsModule, CommonModule],
+  imports: [ FormsModule, CommonModule, DisplaydataComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
@@ -24,10 +25,10 @@ export class HomeComponent {
     }
   };
 
-  students: { student: Student, checked: boolean }[] = [];
+  students: Student[] = [];
 
   submitStudent() {
-    this.students.push({ student: { ...this.student1 }, checked: false }); 
+    this.students.push({ ...this.student1 });
     this.clearForm();
   }
 
@@ -44,19 +45,6 @@ export class HomeComponent {
         zip: ''
       }
     };
-  }
-
-  delete(index: number) {
-    this.students.splice(index, 1);
-  }
-
-  edit(index: number) {
-    this.student1 = { ...this.students[index].student };
-    this.delete(index); 
-  }
-
-  deleteChecked() {
-    this.students = this.students.filter(student => !student.checked);
   }
 }
 
