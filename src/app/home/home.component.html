@@ -15,15 +15,12 @@
   <input type="text" placeholder="City" [(ngModel)]="student1.address.city">
   <input type="text" placeholder="ZIP" [(ngModel)]="student1.address.zip">
 
-  <button (click)="submitStudent()">Create Student</button>
+  <button (click)="submitStudent()">Create/Update Student</button>
 
-  
   <app-displaydata [students]="students"
-  
-  (deleteStudentEvent)="deleteStudent($event)" 
-  (editStudentEvent)="editStudent($event)"
- 
-  ></app-displaydata>
+    (deleteStudentEvent)="deleteStudent($event)"
+    (editStudentEvent)="editStudent($event)">
+  </app-displaydata>
 </div>
 
 

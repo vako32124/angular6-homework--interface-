@@ -6,12 +6,11 @@ import { DisplaydataComponent } from '../displaydata/displaydata.component';
 
 @Component({
   selector: 'app-home',
-  imports: [ FormsModule, CommonModule, DisplaydataComponent],
+  imports: [FormsModule, CommonModule, DisplaydataComponent],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+  styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
-
   student1: Student = {
     name: '',
     age: null,
@@ -27,8 +26,18 @@ export class HomeComponent {
 
   students: Student[] = [];
 
+  editingStudent: Student | null = null; 
+
   submitStudent() {
-    this.students.push({ ...this.student1 });
+    if (this.editingStudent) {
+      const index = this.students.indexOf(this.editingStudent);
+      if (index !== -1) {
+        this.students[index] = { ...this.student1 };
+      }
+      this.editingStudent = null; 
+    } else {
+      this.students.push({ ...this.student1 });
+    }
     this.clearForm();
   }
 
@@ -50,14 +59,13 @@ export class HomeComponent {
   deleteStudent(student: Student) {
     this.students.splice(this.students.indexOf(student), 1);
   }
-  
+
   editStudent(student: Student) {
-   this.student1 = (student) ; 
+    this.student1 = { ...student };
+    this.editingStudent = student;
+  }
 }
 
-
-
-}
 
 
 
