@@ -1,13 +1,16 @@
 <div class="card">
-    <h2>{{ student.name }}</h2>
-    <p><strong>Age:</strong> {{ student.age }}</p>
-    <p><strong>Grade:</strong> {{ student.grade }}</p>
-    <p><strong>Subjects:</strong> {{ student.subjects }}</p>
-    <p><strong>Enrolled:</strong> {{ student.isEnrolled ? 'Yes' : 'No' }}</p>
-    
-    <h3>Address</h3>
-    <p><strong>Street:</strong> {{ student.address.street }}</p>
-    <p><strong>City:</strong> {{ student.address.city }}</p>
-    <p><strong>ZIP:</strong> {{ student.address.zip }}</p>
-  </div>
-  
+  <h2>{{ student.name }}</h2>
+  <p><strong>Age:</strong> {{ student.age }}</p>
+  <p><strong>Grade:</strong> {{ student.grade }}</p>
+  <p><strong>Subjects:</strong> {{ student.subjects }}</p>
+  <p><strong>Enrolled:</strong> {{ student.isEnrolled ? 'Yes' : 'No' }}</p>
+
+  <h3>Address</h3>
+  <p><strong>Street:</strong> {{ student.address.street }}</p>
+  <p><strong>City:</strong> {{ student.address.city }}</p>
+  <p><strong>ZIP:</strong> {{ student.address.zip }}</p>
+
+  <button class="deletebtn" (click)="deletecard()">Delete Student</button>
+  <button class="editbtn" (click)="edit()">Edit Student</button>
+</div>
+

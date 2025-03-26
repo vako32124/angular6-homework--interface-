@@ -18,7 +18,11 @@
   <button (click)="submitStudent()">Create Student</button>
 
   
-  <app-displaydata [students]="students"></app-displaydata>
+  <app-displaydata [students]="students"
+  
+  (editStudentEvent)="editStudent($event)"
+ 
+  ></app-displaydata>
 </div>
 
 

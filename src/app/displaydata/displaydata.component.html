@@ -1,4 +1,11 @@
+<h2>Student List</h2>
+
 <div class="students-container">
-    <app-card *ngFor="let student of students" [student]="student"></app-card>
-  </div>
-  
+  <app-card 
+    *ngFor="let student of students" 
+    [student]="student" 
+    (deleteStudentEvent)="deleteStudent($event)" 
+    (editStudentEvent)="editStudent($event)">
+  </app-card>
+</div>
+

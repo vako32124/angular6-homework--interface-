@@ -46,9 +46,14 @@ export class HomeComponent {
       }
     };
   }
+  
+  editStudent(student: Student) {
+   this.student1 = (student) ; 
 }
 
 
+
+}
 
 
 

@@ -1,10 +1,14 @@
+$primary-color: #007bff;
+$hover-color: #0056b3;
+
+
+
 .card {
     background: white;
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     width: 250px;
-    text-align: center;
   }
   
   h2 {
@@ -21,5 +25,39 @@
   
   p:last-child {
     border-bottom: none;
+  }
+.deletebtn{
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    background: red;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background 0.3s ease-in-out;
+  
+    &:hover {
+      background: $hover-color;
+    }
+  }
+  .editbtn{
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    background: $primary-color;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background 0.3s ease-in-out;
+  
+    &:hover {
+      background: $hover-color;
+    }
   }
   
