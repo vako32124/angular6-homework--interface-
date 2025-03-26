@@ -46,6 +46,10 @@ export class HomeComponent {
       }
     };
   }
+
+  deleteStudent(student: Student) {
+    this.students.splice(this.students.indexOf(student), 1);
+  }
   
   editStudent(student: Student) {
    this.student1 = (student) ; 

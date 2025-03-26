@@ -20,6 +20,7 @@
   
   <app-displaydata [students]="students"
   
+  (deleteStudentEvent)="deleteStudent($event)" 
   (editStudentEvent)="editStudent($event)"
  
   ></app-displaydata>

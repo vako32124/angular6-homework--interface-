@@ -1,4 +1,4 @@
-import { Component, Input ,  EventEmitter, Output} from '@angular/core';
+import { Component, Input ,  EventEmitter,Output} from '@angular/core';
 import { Student } from '../models/users';
 import { CommonModule } from '@angular/common';
 import { CardComponent } from '../card/card.component'; 
@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 export class DisplaydataComponent {
   @Input() students: Student[] = [];
   @Output() editStudentEvent = new EventEmitter<Student>();
+   @Output() deleteStudentEvent = new EventEmitter<Student>();
 
   editingStudent: Student | null = null ;;
 
